@@ -33,3 +33,8 @@ jobs:
 
       - name: Build app for Release Any CPU
         run: msbuild TgDownloader.sln -t:rebuild -verbosity:quiet -property:Configuration=Release -property:Platform="Any CPU"
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-app
+          path: dist/
